@@ -5,7 +5,7 @@ from order_app_logic_pkg.OrderItem import OrderItem
 from order_app_logic_pkg.Customer import Customer
 from order_app_logic_pkg.Products import Products
 from order_app_logic_pkg.Postal_Order import Postal_Order
-
+from db_logicpackage.Order_DB import Order_DB
 
 class Order_mgt_UI:
 
@@ -15,7 +15,8 @@ class Order_mgt_UI:
         #testing below: Creation of a regular Order and a Postal Order
         #self.orders=[self.create_postal_order()]
         
-        self.orders=[self.create_order(),self.create_postal_order()]
+        self.orders=[self.create_order()]
+                     #,self.create_postal_order()]
         #self.orders=[self.create_postal_order()]
 
     def get_cust_name(self)->type[str]:
@@ -88,7 +89,8 @@ class Order_mgt_UI:
                      correct_more=False
             if more in ['Y','y']:
                  done=False
-        return an_order
+        order_db = Order_DB(an_order)
+        order_db.save_order()
 
 
     def create_order_item(self)->OrderItem:
@@ -126,6 +128,6 @@ class Order_mgt_UI:
         anItem =OrderItem(item_name,item_unit_price,item_qty)
 
         return anItem
-         
+    
            
 

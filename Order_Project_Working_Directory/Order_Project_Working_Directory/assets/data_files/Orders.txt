@@ -1,0 +1,6 @@
+Order__1    , 8,     1
+Cust_2024_1, Samson                   , samson@                       
+Scientific Calculator                             , 100.000000,     1
+Order__1    , 8,     1
+Cust_2024_1, samson                   , samson@                       
+Matteo                                            ,   1.000000,     1
